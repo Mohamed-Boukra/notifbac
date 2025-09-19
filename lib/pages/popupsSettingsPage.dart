@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/database_service.dart';
 import 'package:workmanager/workmanager.dart';
-import '../services/notification_service.dart';
+import '../services/notification_service.dart';//this is from old testing 
 
 
 
@@ -69,10 +69,10 @@ class _PopupssettingspageState extends State<Popupssettingspage> {
         frequency = const Duration(hours: 4);
         break;
       case 'متوسط': // Medium
-        frequency = const Duration(hours: 2);
+        frequency = const Duration(minutes: 35);
         break;
       case 'كثيف': // Heavy
-        frequency = const Duration(minutes: 15);
+        frequency = const Duration(minutes: 10);
         break;
       case 'مخصص': // Custom
         int customHours = int.tryParse(popupCountController.text) ?? 0;
@@ -100,6 +100,7 @@ class _PopupssettingspageState extends State<Popupssettingspage> {
         requiresCharging: false,
       ),
     );
+    print("DEBUG: Periodic task registered with frequency: $frequency");
 
     // ------------------- END OF CORRECTED LOGIC -----------------------
 
